@@ -54,9 +54,26 @@ function GH:CrearModuloExpulsiones(parent)
     -- Resultados
     local resultadosLabel = frame:CreateFontString(nil, "OVERLAY")
     resultadosLabel:SetFontObject(GameFontNormal)
-    resultadosLabel:SetPoint("TOPLEFT", 0, -120)
+    resultadosLabel:SetPoint("TOPLEFT", 0, -115)
     resultadosLabel:SetText("Resultados:")
     frame.Resultados = resultadosLabel
+
+    local checkAll = CreateFrame("CheckButton", "GHCheckAllExpulsiones", frame, "UICheckButtonTemplate")
+    checkAll:SetPoint("TOPLEFT", 110, -110)
+    _G["GHCheckAllExpulsionesText"]:SetText("Marcar Todos")
+    checkAll:SetScript("OnClick", function(self)
+        if frame.ListaMiembros and frame.ListaMiembros.botones then
+            for _, boton in ipairs(frame.ListaMiembros.botones) do
+                if boton:GetChecked() ~= self:GetChecked() then
+                    boton:SetChecked(self:GetChecked())
+                    -- Llamamos al script OnClick del botón para actualizar GH.MiembrosSeleccionados
+                    local script = boton:GetScript("OnClick")
+                    if script then script(boton) end
+                end
+            end
+        end
+    end)
+    frame.CheckAll = checkAll
 
     -- Botón expulsar
     local expulsar = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")

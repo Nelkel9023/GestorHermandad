@@ -39,9 +39,9 @@ function GH:ActualizarListaMiembros(parent, jugadores)
 
     local y = 0
     for _, jugador in ipairs(jugadores) do
-        local boton = CreateFrame("CheckButton", nil, lista, "UICheckButtonTemplate")
+        local boton = CreateFrame("CheckButton", "GHKickCheck_" .. y, lista, "UICheckButtonTemplate")
         boton:SetPoint("TOPLEFT", 0, y)
-        boton.text:SetText(jugador.Nombre .. "  Lv." .. jugador.Nivel)
+        _G[boton:GetName() .. "Text"]:SetText(jugador.Nombre .. "  Lv." .. jugador.Nivel)
         boton:SetScript("OnClick", function(self)
             if self:GetChecked() then
                 table.insert(GH.MiembrosSeleccionados, jugador)

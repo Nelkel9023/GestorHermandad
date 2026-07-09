@@ -1,0 +1,25 @@
+## Interface: 30300
+## Title: Gestor de Hermandad
+## Notes: Administración avanzada de hermandades para WoW 3.3.5a
+## Author: ChatGPT + Usuario
+## Version: 1.0.0
+## SavedVariables: GestorHermandadDB
+
+Localizacion.lua
+Utilidades.lua
+Core.lua
+Eventos.lua
+GuildPermissions.lua
+GuildUIFix.lua
+ListaNegra.lua
+AutoInvitacion.lua
+FiltroExpulsiones.lua
+NotaOficial.lua
+Configuracion.lua
+Dropdowns.lua
+Confirmaciones.lua
+ListaMiembros.lua
+AutoInvitacionUI.lua
+FiltroExpulsionesUI.lua
+ListaNegraUI.lua
+Interfaz.lua

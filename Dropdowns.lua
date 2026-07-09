@@ -51,12 +51,12 @@ end
 function GH:CrearDropdownNivel(parent)
     local opciones = {
         { texto = "Sin filtro", valor = 0 },
-        { texto = "Menor de nivel 10", valor = 10 },
-        { texto = "Menor de nivel 20", valor = 20 },
-        { texto = "Menor de nivel 30", valor = 30 },
-        { texto = "Menor de nivel 40", valor = 40 },
-        { texto = "Menor de nivel 50", valor = 50 },
-        { texto = "Menor de nivel 60", valor = 60 },
+        { texto = "Nivel 10 o menor", valor = 10 },
+        { texto = "Nivel 20 o menor", valor = 20 },
+        { texto = "Nivel 30 o menor", valor = 30 },
+        { texto = "Nivel 40 o menor", valor = 40 },
+        { texto = "Nivel 50 o menor", valor = 50 },
+        { texto = "Nivel 60 o menor", valor = 60 },
     }
     return self:CrearDropdown(parent, "GHNivelDropdown", opciones, 0, function(valor)
         GH.FiltrosExpulsion.NivelMaximo = valor

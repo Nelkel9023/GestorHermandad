@@ -34,7 +34,7 @@ function GH:BuscarJugadoresExpulsion()
 
             -- Filtro nivel
             if filtros.NivelMaximo > 0 then
-                if nivel >= filtros.NivelMaximo then expulsar = false end
+                if nivel > filtros.NivelMaximo then expulsar = false end
             end
 
             -- Filtro rango (opcional)

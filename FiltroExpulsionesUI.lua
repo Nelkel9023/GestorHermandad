@@ -20,7 +20,7 @@ function GH:CrearModuloExpulsiones(parent)
     offlineLabel:SetPoint("TOPLEFT", 0, 0)
     offlineLabel:SetText("Días desconectado:")
 
-    local diasInput = CreateFrame("EditBox", nil, frame, "InputBoxTemplate")
+    local diasInput = CreateFrame("EditBox", "GHExpulsionesDiasInput", frame, "InputBoxTemplate")
     diasInput:SetWidth(40)
     diasInput:SetHeight(20)
     diasInput:SetPoint("TOPLEFT", 130, -3)
@@ -64,7 +64,7 @@ function GH:CrearModuloExpulsiones(parent)
     checkAll:SetScript("OnClick", function(self)
         if frame.ListaMiembros and frame.ListaMiembros.botones then
             for _, boton in ipairs(frame.ListaMiembros.botones) do
-                if boton:GetChecked() ~= self:GetChecked() then
+                if boton:IsShown() and boton:GetChecked() ~= self:GetChecked() then
                     boton:SetChecked(self:GetChecked())
                     -- Llamamos al script OnClick del botón para actualizar GH.MiembrosSeleccionados
                     local script = boton:GetScript("OnClick")

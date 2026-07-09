@@ -36,10 +36,10 @@ function GH:CrearModuloAutoInvitacion(parent)
     titulo:SetPoint("TOPLEFT", 15, -140)
     titulo:SetText("Bloquear jugador (Lista Negra):")
 
-    local nombre = CreateFrame("EditBox", nil, frame, "InputBoxTemplate")
+    local nombre = CreateFrame("EditBox", "GHAutoInviteBlacklistInput", frame, "InputBoxTemplate")
     nombre:SetWidth(140)
     nombre:SetHeight(20)
-    nombre:SetPoint("TOPLEFT", 20, -165)
+    nombre:SetPoint("TOPLEFT", 25, -165)
     nombre:SetAutoFocus(false)
 
     local agregar = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")

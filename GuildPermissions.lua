@@ -36,8 +36,17 @@ end
 -- Tiene permisos de gestión
 ---------------------------------------------------
 function GH:TienePermisos()
-    -- Debug: force permissions to true
-    return true
+    -- Debug: force permissions if enabled
+    if GestorHermandadDB and GestorHermandadDB.DebugMode then
+        return true
+    end
+    
+    -- Permissions check: Can kick players or is Guild Master
+    if CanGuildRemove() or IsGuildLeader() then
+        return true
+    end
+    
+    return false
 end
 
 ---------------------------------------------------

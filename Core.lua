@@ -29,6 +29,9 @@ local function CrearConfiguracion()
     if not GestorHermandadDB.FiltrosExpulsion then
         GestorHermandadDB.FiltrosExpulsion = {}
     end
+    if GestorHermandadDB.DebugMode == nil then
+        GestorHermandadDB.DebugMode = false
+    end
 end
 
 ---------------------------------------------------
@@ -42,7 +45,17 @@ end
 -- Slash Command
 ---------------------------------------------------
 SLASH_GESTORHERMANDAD1 = "/gh"
-SlashCmdList["GESTORHERMANDAD"] = function()
+SlashCmdList["GESTORHERMANDAD"] = function(msg)
+    if msg == "debug" then
+        GestorHermandadDB.DebugMode = not GestorHermandadDB.DebugMode
+        if GestorHermandadDB.DebugMode then
+            GH:Imprimir("Modo debug: ACTIVADO (Permisos forzados)")
+        else
+            GH:Imprimir("Modo debug: DESACTIVADO (Permisos normales)")
+        end
+        return
+    end
+
     if GH.MostrarModuloExpulsiones then
         GH:MostrarModuloExpulsiones()
     else

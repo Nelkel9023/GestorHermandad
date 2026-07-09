@@ -1,7 +1,7 @@
 ## Interface: 30300
 ## Title: Gestor de Hermandad
 ## Notes: Administración avanzada de hermandades para WoW 3.3.5a
-## Author: ChatGPT + Usuario
+## Author: @Nelkel
 ## Version: 1.0.0
 ## SavedVariables: GestorHermandadDB
 

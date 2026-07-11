@@ -35,12 +35,20 @@ end
 function GH:CrearDropdownDias(parent)
     local opciones = {
         { texto = "Sin filtro", valor = 0 },
-        { texto = "30 días", valor = 30 },
-        { texto = "60 días", valor = 60 },
-        { texto = "90 días", valor = 90 },
-        { texto = "180 días", valor = 180 },
+        { texto = "1 o más días", valor = 1 },
+        { texto = "2 o más días", valor = 2 },
+        { texto = "3 o más días", valor = 3 },
+        { texto = "4 o más días", valor = 4 },
+        { texto = "5 o más días", valor = 5 },
+        { texto = "6 o más días", valor = 6 },
+        { texto = "7 o más días", valor = 7 },
+        { texto = "8 o más días", valor = 8 },
+        { texto = "9 o más días", valor = 9 },
+        { texto = "10 o más días", valor = 10 },
+        { texto = "20 o más días", valor = 20 },
+        { texto = "30 o más días", valor = 30 },
     }
-    return self:CrearDropdown(parent, "GHDiasDropdown", opciones, 90, function(valor)
+    return self:CrearDropdown(parent, "GHDiasDropdown", opciones, 0, function(valor)
         GH.FiltrosExpulsion.DiasOffline = valor
     end)
 end

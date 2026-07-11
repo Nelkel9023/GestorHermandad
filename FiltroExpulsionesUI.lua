@@ -20,19 +20,8 @@ function GH:CrearModuloExpulsiones(parent)
     offlineLabel:SetPoint("TOPLEFT", 0, 0)
     offlineLabel:SetText("Días desconectado:")
 
-    local diasInput = CreateFrame("EditBox", "GHExpulsionesDiasInput", frame, "InputBoxTemplate")
-    diasInput:SetWidth(40)
-    diasInput:SetHeight(20)
-    diasInput:SetPoint("TOPLEFT", 130, -3)
-    diasInput:SetNumeric(true)
-    diasInput:SetAutoFocus(false)
-    diasInput:SetMaxLetters(3)
-    diasInput:SetText(tostring(GH.FiltrosExpulsion.DiasOffline or 0))
-    diasInput:SetScript("OnTextChanged", function(self)
-        local value = tonumber(self:GetText()) or 0
-        GH.FiltrosExpulsion.DiasOffline = value
-    end)
-    frame.DiasInput = diasInput
+    local diasDD = GH:CrearDropdownDias(frame)
+    diasDD:SetPoint("TOPLEFT", 120, -5)
 
     -- Dropdown nivel
     local nivelLabel = frame:CreateFontString(nil, "OVERLAY")

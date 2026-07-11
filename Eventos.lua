@@ -24,6 +24,9 @@ GH.EventFrame:SetScript("OnEvent", function(self, event, ...)
     end
 
     if event == "PLAYER_LOGIN" then
+        -- Always show offline members so the kick filter always has full data
+        SetGuildRosterShowOffline(1)
+        GuildRoster()
         if GH.CrearInterfaz and GH.PanelHermandad then
             GH:CrearInterfaz()
         end

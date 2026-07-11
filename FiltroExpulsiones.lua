@@ -20,11 +20,6 @@ function GH:BuscarJugadoresExpulsion()
     local resultados = {}
     local filtros = self.FiltrosExpulsion
 
-    -- Force offline members into the roster temporarily so GetGuildRosterLastOnline works
-    local mostrabOffline = GetGuildRosterShowOffline()
-    if not mostrabOffline then
-        SetGuildRosterShowOffline(1)
-    end
     GuildRoster()
     local total = GetNumGuildMembers()
 
@@ -70,11 +65,6 @@ function GH:BuscarJugadoresExpulsion()
                 })
             end
         end
-    end
-
-    -- Restore original offline visibility setting
-    if not mostrabOffline then
-        SetGuildRosterShowOffline(0)
     end
 
     return resultados

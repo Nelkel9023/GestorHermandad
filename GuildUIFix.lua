@@ -46,7 +46,6 @@ function GH:CrearPanelGuild()
 
     GH.PanelHermandad = panel
     GH:CrearInterfaz()
-    print("|cFFFFFF00[GH]|r PanelHermandad creado con éxito y anclado a GuildFrame.")
 end
 
 ---------------------------------------------------
@@ -54,7 +53,6 @@ end
 ---------------------------------------------------
 function GH:ActualizarPanelGuild()
     if not GH.PanelHermandad then
-        print("|cFFFFFF00[GH]|r Error: PanelHermandad no existe.")
         return
     end
     if not GuildFrame or not GuildFrame:IsShown() then
@@ -64,7 +62,6 @@ function GH:ActualizarPanelGuild()
     if GH:TienePermisos() then
         GH.PanelHermandad:Show()
     else
-        print("|cFFFFFF00[GH]|r Ocultando panel por falta de permisos.")
         GH.PanelHermandad:Hide()
     end
 end

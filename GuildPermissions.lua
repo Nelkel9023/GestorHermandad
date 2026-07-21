@@ -41,8 +41,8 @@ function GH:TienePermisos()
         return true
     end
     
-    -- Permissions check: Can kick players or is Guild Master
-    if CanGuildRemove() or IsGuildLeader() then
+    -- Permissions check: Can kick players, invite players, or is Guild Master
+    if CanGuildRemove() or CanGuildInvite() or IsGuildLeader() then
         return true
     end
     
